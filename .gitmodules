@@ -1,4 +1,4 @@
 [submodule "demos"]
 	path = demos
-	url = git@github.com:thumbsup/demos.git
+	url = https://github.com/thumbsup/demos.git
 	branch = target
