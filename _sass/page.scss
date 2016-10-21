@@ -1,14 +1,19 @@
 
-body.page h3:first-child {
+.page {
+  min-height: 40em;
+  padding: 2em;
+}
+
+.page h3:first-child {
   margin-top: 0;
 }
 
-body.page h2 {
+.page h2 {
   margin-bottom: 1em;
   margin-top: 0;
 }
 
-body.page h3 {
+.page h3 {
   background: #17baef;
   color: #fff;
   font-size: 1.3em;
@@ -17,7 +22,7 @@ body.page h3 {
   padding: 0.5em 1em;
 }
 
-body.page h4 {
+.page h4 {
   color: #555;
   margin-top: 2em;
 }

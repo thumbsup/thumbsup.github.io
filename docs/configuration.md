@@ -19,15 +19,18 @@ The following arguments are required:
 And you can optionally specify:
 
 ```bash
---title [text]          # website title (default: `Photo gallery`)
---thumb-size [pixels]   # thumbnail image size (default: `120`)
---large-size [pixels]   # fullscreen image size (default: `1000`)
---original-photos [true|false]  # to allow download of full-size photos (default: `false`)
---original-videos [true|false]  # to allow download of full-size videos (default: `false`)
---sort-albums [name|date]  # how to sort the albums (default: `date`)
---theme [name]             # name of the gallery theme to apply (default: `default`)
---css [file]               # CSS/LESS file to apply on top of the theme (no default)
---google-analytics [code]  # code for Google Analytics tracking (no default)
+--title [text]                  # website title (default: Photo gallery)
+--thumb-size [pixels]           # thumbnail image size (default: 120)
+--large-size [pixels]           # fullscreen image size (default: 1000)
+--original-photos [true|false]  # include full-size photos for download (default: false)
+--original-videos [true|false]  # include full-size videos for download (default: false)
+--albums-from [folders|date]    # how files are grouped into albums (default: folders)
+--albums-date-format [pattern]  # how albums are named in "date" mode (default: YYYY-MM)
+--sort-albums [name|date]       # how to sort the albums (default: date)
+--sort-media [name|date]        # how to sort files inside an album (default: date)
+--theme [name]                  # name of the gallery theme to apply (default: default)
+--css [file]                    # CSS/LESS file to apply on top of the theme (no default)
+--google-analytics [code]       # code for Google Analytics tracking (no default)
 ```
 
 For example it can be as simple as
@@ -44,11 +47,36 @@ thumbsup --input "/media/photos" --output "./website" --title "My holidays" --th
 ```
 {: .single-line}
 
-**Important notes**
+All relative paths are relative to the current working directory.
 
-- all relative paths are relative to the current working directory
-- when `original` settings are off, the download link points to a web-friendly size
-- when `original` settings are on, all original media is copied to the output folder
+### More details
+
+#### \-\-original-photos / \-\-original-videos
+
+When these settings are on, original files are copied into the output folder,
+and a link is provided for download. When the settings are off, the download link
+points to a web-friendly (resized) version instead.
+
+#### \-\-albums-from
+
+If you choose `folders`, the album structure will exactly mirror the folder structure on disk.
+If you choose `date`, files will be grouped into albums based on their date - regardless of where they are on disk.
+
+#### \-\-albums-date-format
+
+This is only relevant if you chose `--album-from date`, and determines how albums are named.
+It can be any valid [moment.js](http://momentjs.com/) date format. The format can contain
+the `/` character to create nested albums. Some valid examples are:
+
+- `YYYY MMMM` for a top-level `2016 October` album
+- `YYYY/MM` for a top-level `2016` album, with a nested album called `10`
+- `YYYY/YYYY MMMM` for a top-level `2016` album, with a nested album called `2016 October`
+
+<div class="warning">
+The date of a file is always the date is was taken, if available in the <code>EXIF</code> data.
+If there is no EXIF data, it defaults to the file's <code>mtime</code>,
+which you can change with many tools - including Unix's <code>touch</code> command.
+</div>
 
 ### JSON configuration
 

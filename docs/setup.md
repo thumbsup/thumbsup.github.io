@@ -123,7 +123,7 @@ The only requirement is to make sure the paths referenced are accessible from wi
 Photo dates displayed on the website are based on the current machine timezone.
 When running in Docker, this is `GMT`. If the timezone is important to you, you should also add
 
-```bash
+```
 docker run -v /etc/localtime:/etc/localtime [...]
 ```
 

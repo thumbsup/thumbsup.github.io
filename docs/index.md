@@ -8,6 +8,8 @@ title: thumbsup configuration
 `thumbsup` is a relatively simple command-line tool.
 Building a gallery is as simple as
 
+<br />
+
 ```bash
 thumbsup --input ~/myphotos --output ~/gallery
 ```
