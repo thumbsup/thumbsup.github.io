@@ -13,13 +13,7 @@
 - When you're happy, commit &amp; push
 - Github will publish the results to https://thumbsup.github.io
 
-## Rebuilding the demo galleries
+## Demo galleries
 
-To avoid dependencies on `ffmpeg` etc, building the demo sites requires [Docker](https://www.docker.com).
-Verify it's working by running `docker pull thumbsup/thumbsup`.
-
-The following command will rebuild all demo sites, using different templates and config settings:
-
-```bash
-./build-demos
-```
+To avoid bloating this repo, demo galleries are hosted at https://github.com/thumbsup/demos.
+They are included here as a submodule, pointing to the `target` branch.

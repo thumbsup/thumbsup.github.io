@@ -1,0 +1,33 @@
+
+/* Extra small devices (phones, less than 768px) */
+
+@media (max-width: 767px) {
+  .header .main-nav button {
+    margin-right: 0;
+  }
+  .header .main-nav .navbar-collapse {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .promo {
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+  .promo .btns .btn {
+    margin-right: 0;
+    clear: both;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .promo .title {
+    font-size: 60px;
+  }
+  .promo .meta {
+    margin-top: 60px;
+  }
+  .promo .meta li {
+    float: none;
+    display: block;
+    margin-bottom: 5px;
+  }
+}

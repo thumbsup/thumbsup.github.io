@@ -38,6 +38,9 @@ github:
 gems:
   # None currently
 
+sass:
+  sass_dir: _sass
+
 # Build settings
 markdown:     kramdown
 permalink:    pretty

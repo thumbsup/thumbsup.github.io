@@ -1,7 +1,13 @@
 ---
 layout: default
-title: thumbsup deployment
+title: Deployment
 ---
+
+## Deployment
+
+`thumbsup` is a fully static generator.
+The output is a website that can be browsed locally in your favourite browser, or hosted on any webserver.
+There is no application server needed.
 
 ### Generated gallery structure
 
