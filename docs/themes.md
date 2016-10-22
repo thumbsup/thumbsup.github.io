@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Rhemes
+title: Themes
 ---
 
 ## Themes

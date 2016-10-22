@@ -185,26 +185,33 @@
   background: #17baef;
   color: #fff;
 }
+.features .container {
+  color: #444;
+  max-width: 800px;
+  padding: 0 1em 1em 1em;
+}
 .features .title {
   color: #074f66;
   margin-top: 0;
   margin-bottom: 30px;
 }
-.features a {
-  color: #074f66;
+.features .theme-gallery {
+  margin-top: 3em;
 }
-.features a:hover {
-  color: #042a36;
+.features .theme-gallery .item {
+  padding: 1em;
 }
-.features .feature-list li {
-  margin-bottom: 10px;
-  color: #074f66;
+.features .theme-gallery img {
+  width: 100%;
 }
-.features .feature-list li .fa {
-  margin-right: 5px;
-  color: #fff;
+.features .theme-caption {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
 }
-
 
 /* ======= Docs Section ======= */
 .docs {
