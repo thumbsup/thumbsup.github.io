@@ -16,4 +16,4 @@
 ## Demo galleries
 
 To avoid bloating this repo, demo galleries are hosted at https://github.com/thumbsup/demos.
-They are included here as a submodule, pointing to the `target` branch.
+It generates its own standalone Github Pages website.
