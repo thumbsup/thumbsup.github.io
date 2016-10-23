@@ -88,17 +88,25 @@ table.comparison code {
   padding: 0.8em;
 }
 
-ul.theme-gallery {
-  list-style-type: none;
+.page .theme-gallery {
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-ul.theme-gallery li {
-  display: inline-block;
-  margin-right: 1em;
-  width: 30%;
-  max-width: 30em;
+.page .theme-gallery .item {
+  padding: 1em;
+  max-width: 350px;
 }
 
-ul.theme-gallery img {
+.page .theme-gallery img {
+  width: 100%;
+}
+
+.page .theme-caption {
+  background: #f5f5f5;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  margin: 0 auto;
+  padding: 1em;
   width: 100%;
 }

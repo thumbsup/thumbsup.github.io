@@ -5,7 +5,7 @@ title: Configuration
 
 ## Configuration
 
-Being a command-line tool, all `thumbsup` configuration is done passing arguments.
+All `thumbsup` configuration is done passing command-line arguments.
 
 ### Command line arguments
 

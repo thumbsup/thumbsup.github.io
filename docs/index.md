@@ -5,7 +5,7 @@ title: thumbsup configuration
 
 ## Documentation
 
-`thumbsup` is a relatively simple command-line tool.
+`thumbsup` is a command-line tool.
 Building a gallery is as simple as
 
 <br />
