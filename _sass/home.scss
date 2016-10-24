@@ -1,100 +1,29 @@
 /* ======= Header ======= */
-.header {
-  padding: 10px 0;
-  background: #17baef;
-  color: #fff;
-  /*position: fixed;*/
-  width: 100%;
-}
-.header.navbar-fixed-top {
+.home .header {
   background: #fff;
-  z-index: 9999;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
 }
-.header.navbar-fixed-top .logo a {
+.home .header .logo a {
   color: #17baef;
 }
-.header.navbar-fixed-top .main-nav .nav .nav-item a {
-  color: #666666;
+.home .header .main-nav .nav .nav-item a {
+  color: #666;
 }
-.header .logo {
-  margin: 0;
-  font-size: 26px;
-  padding-top: 10px;
-}
-.header .logo a {
+.grid-cover {
+  background: #17baef;
+  background: url(/public/images/hero-grid.jpg) center center repeat;
+  background-size: cover;
   color: #fff;
 }
-.header .logo a:hover {
-  text-decoration: none;
-}
-.header .main-nav button {
-  background: #074f66;
-  color: #fff !important;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.header .main-nav button:focus {
-  outline: none;
-}
-.header .main-nav button .icon-bar {
-  background-color: #fff;
-}
-.header .main-nav .navbar-collapse {
-  padding: 0;
-}
-.header .main-nav .nav .nav-item {
-  font-weight: normal;
-  margin-right: 0;
-  font-family: 'Montserrat', sans-serif;
-}
-.header .main-nav .nav .nav-item.active a {
-  color: #17baef;
-  background: none;
-}
-.header .main-nav .nav .nav-item a {
-  color: #fff;
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
-  font-size: 14px;
-  padding: 15px 10px;
-  font-weight: bold;
-}
-.header .main-nav .nav .nav-item a:hover {
-  color: #074f66;
-  background: none;
-}
-.header .main-nav .nav .nav-item a:focus {
-  outline: none;
-  background: none;
-}
-.header .main-nav .nav .nav-item a:active {
-  outline: none;
-  background: none;
-}
-.header .main-nav .nav .nav-item.active {
-  color: #17baef;
-}
-.header .main-nav .nav .nav-item.last {
-  margin-right: 0;
-}
-
 /* ======= Promo Section ======= */
 .promo {
-  background: #17baef;
   color: #fff;
   padding-top: 80px;
   padding-bottom: 60px;
+}
+.promo .container {
+  opacity: 1;
+  position: relative;
+  z-index: 2;
 }
 .promo .title {
   font-size: 98px;
@@ -182,7 +111,6 @@
 /* ======= Features Section ======= */
 .features {
   padding: 80px 0;
-  background: #17baef;
   color: #fff;
 }
 .features .container {
@@ -197,6 +125,13 @@
   color: #074f66;
   margin-top: 0;
   margin-bottom: 30px;
+  background: #fff;
+  padding: 1em;
+  margin-bottom: 0;
+}
+.features .brief {
+  background: #fff;
+  padding: 0 1em 1.5em 1em;
 }
 .features .theme-gallery {
   margin-top: 3em;
