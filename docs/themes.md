@@ -11,24 +11,26 @@ Here are the current themes available:
 <div class="row theme-gallery">
   <!-- Default -->
   <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-default.jpg" alt="Default theme">
+      <img src="/public/images/theme-classic.jpg" alt="Default theme">
       <div class="theme-caption">
-        Default <br />
-        <a href="https://thumbsup.github.io/demos">See the demo site</a>
+        Classic theme <br />
+        <a href="https://thumbsup.github.io/demos/themes/classic">See the demo site</a>
       </div>
   </div>
   <!-- Coming soon -->
   <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-coming-soon.jpg" alt="New theme">
+      <img src="/public/images/theme-cards.jpg" alt="New theme">
       <div class="theme-caption">
-        Coming soon... <br />&nbsp;
+        Cards theme <br />
+        <a href="https://thumbsup.github.io/demos/themes/cards">See the demo site</a>
       </div>
   </div>
   <!-- Coming soon -->
   <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-coming-soon.jpg" alt="New theme">
+      <img src="/public/images/theme-mosaic.jpg" alt="New theme">
       <div class="theme-caption">
-        Coming soon... <br />&nbsp;
+        Mosaic theme <br />
+        <a href="https://thumbsup.github.io/demos/themes/mosaic">See the demo site</a>
       </div>
   </div>
 </div>

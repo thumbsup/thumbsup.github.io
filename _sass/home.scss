@@ -139,15 +139,12 @@
 .features .theme-gallery .item {
   padding: 1em;
 }
-.features .theme-gallery img {
-  width: 100%;
+.features .theme-gallery a {
+  color: #17baef;
 }
-.features .theme-caption {
-  background: #fff;
-  border-top: 1px solid #ccc;
-  font-weight: bold;
-  margin: 0 auto;
-  padding: 1em;
+.features .theme-gallery img {
+  border: 2px solid #fff;
+  box-shadow: -1px 1px 8px 1px rgba(0,0,0,0.3);
   width: 100%;
 }
 
