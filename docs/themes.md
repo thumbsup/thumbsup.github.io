@@ -13,24 +13,24 @@ Here are the current themes available:
   <div class="item col-md-4 col-sm-4 col-xs-12">
       <img src="/public/images/theme-classic.jpg" alt="Default theme">
       <div class="theme-caption">
-        Classic theme <br />
-        <a href="https://thumbsup.github.io/demos/themes/classic">See the demo site</a>
+        <code>--theme classic</code>
+        <a href="https://thumbsup.github.io/demos/themes/classic">(see demo)</a>
       </div>
   </div>
   <!-- Coming soon -->
   <div class="item col-md-4 col-sm-4 col-xs-12">
       <img src="/public/images/theme-cards.jpg" alt="New theme">
       <div class="theme-caption">
-        Cards theme <br />
-        <a href="https://thumbsup.github.io/demos/themes/cards">See the demo site</a>
+        <code>--theme cards</code>
+        <a href="https://thumbsup.github.io/demos/themes/cards">(see demo)</a>
       </div>
   </div>
   <!-- Coming soon -->
   <div class="item col-md-4 col-sm-4 col-xs-12">
       <img src="/public/images/theme-mosaic.jpg" alt="New theme">
       <div class="theme-caption">
-        Mosaic theme <br />
-        <a href="https://thumbsup.github.io/demos/themes/mosaic">See the demo site</a>
+        <code>--theme mosaic</code>
+        <a href="https://thumbsup.github.io/demos/themes/mosaic">(see demo)</a>
       </div>
   </div>
 </div>
