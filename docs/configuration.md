@@ -68,6 +68,16 @@ When these settings are on, original files are copied into the output folder,
 and a link is provided for download. When the settings are off, the download link
 points to a web-friendly (resized) version instead.
 
+#### \-\-cleanup
+
+When enabled (`--cleanup true`) this will generate the website as usual,
+but also delete any **output** media files that are no longer referenced.
+
+For example if you delete a photo from the **input** folder,
+it will automatically delete the corresponding thumbnail since no album refers to it anymore.
+
+*Note:* this never deletes any files from the input folder itself.
+
 #### \-\-albums-from
 
 If you choose `folders`, the album structure will exactly mirror the folder structure on disk.
@@ -88,6 +98,27 @@ The date of a file is always the date is was taken, if available in the <code>EX
 If there is no EXIF data, it defaults to the file's <code>mtime</code>,
 which you can change with many tools - including Unix's <code>touch</code> command.
 </div>
+
+#### \-\-albums-output-folder
+
+The default settings is for all HTML pages to sit at the root of the gallery.
+This setting lets you group albums into a subfolder, so that the output looks like
+
+```
+output
+  |__ index.html
+  |__ albums
+  |   |__ album-1.html
+  |   |__ album-2.html
+  |__ media
+  |   |__ photo0001.jpg
+  |   |__ photo0002.jpg
+  |__ public
+      |__ styles.css
+```
+
+This can help keep the output clean if you want to.
+All relative links are still maintained for local browsing.
 
 ### JSON configuration
 
