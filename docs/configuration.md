@@ -54,7 +54,7 @@ thumbsup --input "/media/photos" --output "./website"
 or as complex as
 
 ```bash
-thumbsup --input "/media/photos" --output "./website" --title "My holidays" --thumb-size 200 --large-size 1500 --original-photos true --original-videos false --sort-albums date --theme default --css "./custom.css" --google-analytics "UA-999999-9"
+thumbsup --input "/media/photos" --output "./website" --title "My holidays" --thumb-size 200 --large-size 1500 --original-photos true --original-videos false --albums-from date --albums-date-format 'YYYY/MMM' --sort-albums-by date --theme cards --css "./custom.css" --google-analytics "UA-999999-9"
 ```
 {: .single-line}
 
@@ -141,8 +141,8 @@ Simply specify all arguments as an object, without the `--` prefix:
   "large-size": 1500,
   "original-photos": true,
   "original-videos": false,
-  "sort-albums": "date",
-  "theme": "default",
+  "sort-albums-by": "date",
+  "theme": "cards",
   "css": "./custom.css",
   "google-analytics": "UA-999999-9"
 }
