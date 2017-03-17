@@ -6,57 +6,74 @@ title: Themes
 ## Themes
 
 You can select a theme for the generated gallery with `--theme <name>`.
-Here are the current themes available:
+Themes don't impact the way thumbnails are generated, and simply change the final layout of the galleries.
+
+To submit a theme, please [raise an issue on Github here](https://github.com/thumbsup/thumbsup).
+
+### mosaic
+
+In this theme, each album is represented as a strip of small thumbnails.
 
 <div class="row theme-gallery">
-  <!-- Default -->
-  <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-classic.jpg" alt="Default theme">
-      <div class="theme-caption">
-        <code>--theme classic</code>
-        <a href="https://thumbsup.github.io/demos/themes/classic">(see demo)</a>
-      </div>
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+      <img src="/public/images/theme-mosaic-albums.png" alt="List of albums">
   </div>
-  <!-- Coming soon -->
-  <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-cards.jpg" alt="New theme">
-      <div class="theme-caption">
-        <code>--theme cards</code>
-        <a href="https://thumbsup.github.io/demos/themes/cards">(see demo)</a>
-      </div>
-  </div>
-  <!-- Coming soon -->
-  <div class="item col-md-4 col-sm-4 col-xs-12">
-      <img src="/public/images/theme-mosaic.jpg" alt="New theme">
-      <div class="theme-caption">
-        <code>--theme mosaic</code>
-        <a href="https://thumbsup.github.io/demos/themes/mosaic">(see demo)</a>
-      </div>
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+    <img src="/public/images/theme-mosaic-media.png" alt="Photos and videos">
   </div>
 </div>
 
-To submit a theme, please [raise an issue on Github here](https://github.com/thumbsup/node-thumbsup).
+<div class="btns">
+  <a class="btn btn-cta-secondary" href="/demos/themes/mosaic">See demo</a>
+</div>
 
-### Customizing a theme
+### cards
 
-There are two ways to customize the style of your galleries.
-They both rely on the `--css` argument to pass an additional stylesheet.
+This theme uses a larger layout, with one large image per album.
+
+<div class="row theme-gallery">
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+      <img src="/public/images/theme-cards-albums.png" alt="List of albums">
+  </div>
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+    <img src="/public/images/theme-cards-media.png" alt="Photos and videos">
+  </div>
+</div>
+
+<div class="btns">
+  <a class="btn btn-cta-secondary" href="/demos/themes/cards">See demo</a>
+</div>
+
+### classic
+
+This is theme was the default layout of `thumbsup` v1.
+Each album is represented as a 2x2 square of previews.
+
+<div class="row theme-gallery">
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+      <img src="/public/images/theme-classic-albums.png" alt="List of albums">
+  </div>
+  <div class="item col-md-6 col-sm-6 col-xs-12">
+    <img src="/public/images/theme-classic-media.png" alt="Photos and videos">
+  </div>
+</div>
+
+<div class="btns">
+  <a class="btn btn-cta-secondary" href="/demos/themes/classic">See demo</a>
+</div>
+
+<div style="margin-bottom: 3em;"></div>
+
+## Customizing a theme
+
+You can customise the look of a gallery by using `--css <file>`.
+Your stylesheet will be rendered at the end of the site's `<head>`,
+which means you can override any part of theme you want.
+Just make sure the rules are specific enough to take effect. For example:
 
 ```bash
 thumbsup --theme default --css custom.less
 ```
-
-Some themes have [LESS](http://lesscss.org/) variables that you can customize.
-Simply provide a LESS file with your values, e.g.
-
-```sass
-// custom.less
-@myvariable: #cef9b6;
-```
-
-The custom stylesheet is applied on top of the theme's base stylesheet.
-This means you can actually override any style - just make sure they are specific enough to take effect.
-For example:
 
 ```css
 // custom.less
@@ -65,26 +82,8 @@ For example:
 }
 ```
 
-### Theme variables
-
-Here are all the [LESS](http://lesscss.org/) variables that can be overridden for a theme:
-
-#### Default theme
-
-```sass
-@body-background: #f6f6f6;
-@header-background: #444;
-@header-foreground: #fff;
-@nav-background: #fafafa;
-@nav-highlight: #fff;
-@album-background: #fafafa;
-@text-color: #444;
-@text-light: #999;
-@borders: #ddd;
-@mobile-trigger: 900px;
-```
-
-<br />
+The file can be any valid CSS or LESS. Note you don't need to copy the file to the output folder,
+as it's automatically concatenated with the rest of the theme.
 
 <div style="margin: 2em 0; text-align: center;">
   <a class="btn btn-cta-primary" href="/docs/deployment">Next: deployment</a>
