@@ -12,25 +12,36 @@ All `thumbsup` configuration is done passing command-line arguments.
 The following arguments are required:
 
 ```bash
---input <path>    # path to the folder with photos / videos
---output <path>   # target output folder
+--input <path>   # Path to the folder with all photos/videos  [string] [required]
+--output <path>  # Output path for the static website  [string] [required]
 ```
 
 And you can optionally specify:
 
 ```bash
---title [text]                  # website title (default: Photo gallery)
---thumb-size [pixels]           # thumbnail image size (default: 120)
---large-size [pixels]           # fullscreen image size (default: 1000)
---original-photos [true|false]  # include full-size photos for download (default: false)
---original-videos [true|false]  # include full-size videos for download (default: false)
---albums-from [folders|date]    # how files are grouped into albums (default: folders)
---albums-date-format [pattern]  # how albums are named in "date" mode (default: YYYY-MM)
---sort-albums [name|date]       # how to sort the albums (default: date)
---sort-media [name|date]        # how to sort files inside an album (default: date)
---theme [name]                  # name of the gallery theme to apply (default: default)
---css [file]                    # CSS/LESS file to apply on top of the theme (no default)
---google-analytics [code]       # code for Google Analytics tracking (no default)
+Output options:
+  --thumb-size       # Pixel size of the square thumbnails  [number] [default: 120]
+  --large-size       # Pixel height of the fullscreen photos  [number] [default: 1000]
+  --original-photos  # Copy and allow download of full-size photos  [boolean] [default: false]
+  --original-videos  # Copy and allow download of full-size videos  [boolean] [default: false]
+  --cleanup          # Remove any output file that's no longer needed  [boolean] [default: false]
+
+Album options:
+  --albums-from            # How to group media into albums  [choices: "folders", "date"] [default: "folders"]
+  --albums-date-format     # How albums are named in <date> mode [moment.js pattern]  [default: "YYYY-MM"]
+  --sort-albums-by         # How to sort albums  [choices: "title", "start-date", "end-date"] [default: "start-date"]
+  --sort-albums-direction  # Album sorting direction  [choices: "asc", "desc"] [default: "asc"]
+  --sort-media-by          # How to sort photos and videos  [choices: "filename", "date"] [default: "date"]
+  --sort-media-direction   # Media sorting direction  [choices: "asc", "desc"] [default: "asc"]
+
+Website options:
+  --index                 # Filename of the home page  [default: "index.html"]
+  --albums-output-folder  # Output subfolder for HTML albums (default: website root)  [default: "."]
+  --theme                 # Name of the gallery theme to apply  [choices: "classic", "cards", "mosaic"] [default: "classic"]
+  --title                 # Website title  [default: "Photo album"]
+  --footer                # Text or HTML footer  [default: null]
+  --css                   # Path to a custom provided CSS/LESS file for styling  [string]
+  --google-analytics      # Code for Google Analytics tracking  [string]
 ```
 
 For example it can be as simple as
