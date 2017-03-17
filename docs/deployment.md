@@ -105,7 +105,7 @@ At this point you should have a working gallery going through CloudFront, with t
 **Step 2: adding authentication**
 
 - setup a new Lambda function using [lambda-cloudfront-cookies](https://github.com/thumbsup/lambda-cloudfront-cookies). Its job is to create authentication cookies when presented with valid credentials
-- add a login page to the S3 bucket that contains your galleries, e.g. `s3://website.com/login.html`. You can find a nice-looking template at https://github.com/thumbsup/html-pages
+- add a login page to the S3 bucket that contains your galleries, e.g. `s3://website.com/login.html`. You can find a nice-looking template at [thumbsup/html-pages](https://github.com/thumbsup/html-pages)
 - setup CloudFront to require auth cookies for all pages
 - setup CloudFront to render the login page on `403` errors. This is why the `s3:ListBucket` permission is important, otherwise CloudFront will render the login page for broken links too
 - update the login page `<form action="....">` to point to the Lambda API endpoint
