@@ -20,11 +20,12 @@ And you can optionally specify:
 
 ```bash
 Output options:
-  --thumb-size       # Pixel size of the square thumbnails  [number] [default: 120]
-  --large-size       # Pixel height of the fullscreen photos  [number] [default: 1000]
-  --original-photos  # Copy and allow download of full-size photos  [boolean] [default: false]
-  --original-videos  # Copy and allow download of full-size videos  [boolean] [default: false]
-  --cleanup          # Remove any output file that's no longer needed  [boolean] [default: false]
+  --thumb-size            # Pixel size of the square thumbnails  [number] [default: 120]
+  --large-size            # Pixel height of the fullscreen photos  [number] [default: 1000]
+  --download-photos       # What the download link points to for photos  [large,copy,symlink,link] [default: large]
+  --download-videos       # What the download link points to for videos  [large,copy,symlink,link] [default: large]
+  --download-link-prefix  # Relative or absolute prefix if downloads are set to "link"  [string]
+  --cleanup               # Remove any output file that's no longer needed  [boolean] [default: false]
 
 Album options:
   --albums-from            # How to group media into albums  [choices: "folders", "date"] [default: "folders"]
@@ -62,11 +63,55 @@ All relative paths are relative to the current working directory.
 
 ### More details
 
-#### \-\-original-photos / \-\-original-videos
+#### \-\-download-photos / \-\-download-videos
 
-When these settings are on, original files are copied into the output folder,
-and a link is provided for download. When the settings are off, the download link
-points to a web-friendly (resized) version instead.
+These settings control the download behaviour, and whether the original photos/videos are copied to the output folder.
+
+| Value	| Behaviour |
+|-------|-------------------------|
+| `large`	| Download points to the web-friendly large version, which is already generated in the gallery's media folder |
+| `copy`  |	Copies all original files into the output media folder, and points the downloads to them. This significantly increases the size of the gallery, but allows the gallery to be self-contained |
+| `symlink`	| Creates symlinks to the originals in the output folder. This can be useful for galleries made for local browsing |
+| `link`  |	Points the downloads to another (existing) location, which can be local or remote. Use the ``--download-link-prefix` option to configure the links, e.g. `../..` or https://myfiles.com/originals |
+
+For example, given a photo called `MyAlbum/IMG_0001.jpg`:
+
+```bash
+--download-photos large
+# points download link to "large/MyAlbum/IMG_0001.jpg"
+
+--download-photos copy
+# points download link to "originals/MyAlbum/IMG_0001.jpg" (which is created as part of the build)
+
+--download-photos symlink
+# points download link to "originals/MyAlbum/IMG_0001.jpg" (which is a symlink to the input photo)
+
+--download-photos link
+# by default, will use a relative link to the input folder, relative to the output folder
+# the path prefix also be overridden using the --download-link-prefix option
+```
+
+#### \-\-download-link-prefix
+
+This settings controls the download links when `--download-*` is set to `link`.
+The default value is the relative path from the output folder to the input folder.
+For example:
+
+```bash
+thumbsup --input /docs/photos --output /docs/website --download-photos link
+# given a photo called holidays/IMG_0001.jpg
+# the download link will points to ../photos/holidays/IMG_0001.jpg
+```
+
+This can be overridden with any relative or absolute path, or a URL. For example:
+
+```bash
+--download-photos link --download-link-prefix "../../"
+# points download link to "../../holidays/IMG_0001.jpg" (which is assumed to already exist)
+
+--download-photos link --download-link-prefix "https://static.mygallery.com/originals/"
+# points download link to "https://static.mygallery.com/originals/holidays/IMG_0001.jpg" (which is assumed to already exist)
+```
 
 #### \-\-cleanup
 
@@ -139,8 +184,8 @@ Simply specify all arguments as an object, without the `--` prefix:
   "title": "My holiday",
   "thumb-size": 200,
   "large-size": 1500,
-  "original-photos": true,
-  "original-videos": false,
+  "download-photos": "copy",
+  "download-videos": "large",
   "sort-albums-by": "date",
   "theme": "cards",
   "css": "./custom.css",
