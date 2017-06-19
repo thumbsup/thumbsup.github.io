@@ -11,6 +11,12 @@
 npm install -g thumbsup
 thumbsup --input ~/photos --output ~/gallery
                 </code></pre>
+                or
+                <pre class="highlight"><code>
+docker run -t -v $(pwd):/work \
+thumbsupgalleries/thumbsup \
+thumbsup --input /work/photos --output /work/gallery
+                </code></pre>
                 <p>From selecting themes to thumbnail sizes and sorting options,
                   there are many more settings you can experiment with.</p>
                 <div style="margin: 2em 0; text-align: center;">

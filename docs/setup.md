@@ -67,6 +67,7 @@ They each have pros and cons, which one you choose depends on your requirements.
 #### Requirements
 
 - [Node.js](http://nodejs.org/): `brew install Node`
+- [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/): `brew install exiftool`
 - [GraphicsMagick](http://www.graphicsmagick.org/): `brew install graphicsmagick`
 - [FFmpeg](http://www.ffmpeg.org/): `brew install ffmpeg`
 
@@ -96,19 +97,13 @@ For more details about all the arguments and options available, see the [configu
 
 - [Docker](https://www.docker.com/products/docker)
 
-#### Installation
-
-```bash
-docker pull thumbsup/thumbsup
-```
-
 #### Creating a basic gallery
 
 ```bash
 docker run -t              \
   -v `pwd`:/work           \
   -u $(id -u):$(id -g)     \
-  asyncadventures/thumbsup \
+  thumbsupgalleries/thumbsup \
   thumbsup --input /work/media --output /work/gallery
 ```
 
@@ -123,7 +118,7 @@ The only requirement is to make sure the paths referenced are accessible from wi
 Photo dates displayed on the website are based on the current machine timezone.
 When running in Docker, this is `GMT`. If the timezone is important to you, you should also add
 
-```
+```bash
 docker run -v /etc/localtime:/etc/localtime [...]
 ```
 
@@ -138,13 +133,8 @@ $ thumbsup [args]
 
   List all files      [===================] 6/6 files
   Update metadata     [===================] 6/6 files
-  Original photos     [===================] 6/6 files
-  Original videos     [===================] 6/6 files
-  Photos (large)      [===================] 5/5 files
-  Photos (thumbs)     [===================] 5/5 files
-  Videos (resized)    [===================] 1/1 files
-  Videos (poster)     [===================] 1/1 files
-  Videos (thumbs)     [===================] 1/1 files
+  Processing photos   [===================] 10/10 files
+  Processing videos   [===================] 3/3 files
   Static website      [===================] done
 
   Gallery generated successfully
