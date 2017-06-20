@@ -103,7 +103,7 @@ For more details about all the arguments and options available, see the [configu
 docker run -t              \
   -v `pwd`:/work           \
   -u $(id -u):$(id -g)     \
-  thumbsupgalleries/thumbsup \
+  thumbsupgallery/thumbsup \
   thumbsup --input /work/media --output /work/gallery
 ```
 
