@@ -32,62 +32,6 @@ table {
   margin: 1em 0;
 }
 
-table.horizontal th {
-  height: 4em;
-  font-weight: normal;
-  width: 20%;
-}
-
-table.horizontal th,
-table.horizontal td {
-  padding: 0.5em;
-}
-
-table.horizontal tr:not(:last-child) {
-  border-bottom: 1px solid #999;
-}
-
-table.comparison tr {
-  border-bottom: 1px solid #999;
-  text-align: center;
-}
-
-table.comparison th {
-  border-top: 1px solid #999;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  padding: 0.5em;
-  text-align: center;
-  width: 50%;
-}
-
-table.comparison td {
-  padding: 0.5em;
-  text-align: center;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-}
-
-table.comparison td.category {
-  background: #f6f6f6;
-  text-align: center;
-  color: #444;
-  font-weight: bold;
-}
-
-table.comparison code {
-  background: #fff;
-}
-
-.warning {
-  background: #ffffbf;
-  border: 1px solid #f9f900;
-  font-size: 0.9em;
-  font-style: italic;
-  margin-top: 2em;
-  padding: 0.8em;
-}
-
 .page .theme-gallery {
   margin-bottom: 1em;
   margin-top: 1em;
@@ -101,14 +45,5 @@ table.comparison code {
 .page .theme-gallery img {
   border: 2px solid #fff;
   box-shadow: -1px 1px 8px 1px rgba(0, 0, 0, 0.3);
-  width: 100%;
-}
-
-.page .theme-caption {
-  background: #f5f5f5;
-  border-top: 1px solid #ccc;
-  font-size: 0.9em;
-  margin: 0 auto;
-  padding: 1em;
   width: 100%;
 }
